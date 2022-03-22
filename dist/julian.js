@@ -1,8 +1,12 @@
-let julian, month, day
+// Now I need to incoporate the year into the julian number
+
+
+let julian, year, month, day
 const content = document.getElementById("content")
+
 const prompt = document.createElement("div")
 prompt.id = "prompt"
-prompt.innerText = ("Enter the Julian date printed on the bottle:")
+prompt.innerText = ("Enter the first four digits printed on the bottle:")
 content.appendChild(prompt)
 
 const julianField = document.createElement("input")
@@ -15,15 +19,21 @@ content.appendChild(julianSubmit)
 
 const displayAnswer = document.createElement("div")
 displayAnswer.id = "answer"
-content.appendChild(displayAnswer)
+content.appendChild(prompt, julianField, julianSubmit, displayAnswer)
 
 const julianObj = {
     operate: function() {
-        julian = julianField.value
-        if (julian < 365 && julian > 334) {
+        year = julianField.value%10
+        julian = Math.floor(julianField.value/10)
+        if (julian < 1 || julian > 365) {
+            alert("Please enter a valid Julian date.")
+            return
+        }
+        console.log(julian)
+        if (julian <= 365 && julian > 334) {
             month = "December"
             day = julian-334
-        } else if (julian >= 334) {
+        } else if (julian >= 304) {
             month = "November"
             day = julian-304
         } else if (julian >= 273) {
@@ -57,17 +67,8 @@ const julianObj = {
             month = "January"
             day = julian
         }
-        else {
-            alert("Please enter a valid Julian date.")
-        }
-        displayAnswer.innerText = `It is ${month} ${day}`
+        displayAnswer.innerText = `The Gregorian date is ${month} ${day}, 202${year}.`
     }
 }
 
-
-
-
-
 julianSubmit.addEventListener("click", julianObj.operate)
-
-
