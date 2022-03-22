@@ -1,0 +1,26 @@
+{
+  "name": "beer-tools",
+  "version": "1.0.0",
+  "description": "A website with conversion tools related to beer industry.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+     "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EJSorum/Beer-Tools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EJSorum/Beer-Tools/issues"
+  },
+  "homepage": "https://github.com/EJSorum/Beer-Tools#readme",
+  "devDependencies": {
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
