@@ -1,26 +1,29 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
+  mode: 'development',
   entry: {
-    index: "./src/index.js",
+    index: './src/index.js',
   },
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
-    static: "./dist",
+    static: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Beer Tools",
+      title: 'Beer Tools',
       clean: true,
-      publicPath: "",
+      publicPath: '',
     }),
   ],
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: "/",
+    publicPath: '/',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
 };
