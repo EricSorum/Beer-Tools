@@ -2,7 +2,9 @@ import julianFunc from './components/julian.js'; // eslint-disable-line import/e
 import abvConverterFunc from './components/abvconverter.js'; // eslint-disable-line import/extensions
 import volumeFunc from './components/volume.js'; // eslint-disable-line import/extensions
 
-// COMMENT EVERYTHING IN THE PROJECT AND THEN MERGE MAIN BRANCH WITH COMMENTING
+// TODO: determine how to change ESLint rules to allow import extensions.
+// TODO: separate conversion funcs from DOM generation funcs into their own module.
+// TODO: Once functions have been made simple, write tests.
 
 /*
 All contents of the website are dynamically generated into the 'content' div in the

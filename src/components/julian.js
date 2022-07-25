@@ -1,3 +1,9 @@
+/*
+This ES6 module dynamically generates the Julian Date Converter onto the DOM.
+*/
+
+// TODO: redesign error messages as modal elements to avoid using alerts.
+
 export default function julianFunc() {
   let julian; let year; let month; let
     day;

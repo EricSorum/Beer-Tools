@@ -1,3 +1,7 @@
+/*
+This ES6 module dynamically generates the Volume Converter onto the DOM.
+*/
+
 export default function volumeFunc() {
   const toolBox = document.getElementById('toolBox');
   toolBox.innerHTML = [];
