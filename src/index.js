@@ -1,6 +1,27 @@
-import julianFunc from './julian.js'; // eslint-disable-line import/extensions
-import abvConverterFunc from './abvconverter.js'; // eslint-disable-line import/extensions
-import volumeFunc from './volume.js'; // eslint-disable-line import/extensions
+import julianFunc from './components/julian.js'; // eslint-disable-line import/extensions
+import abvConverterFunc from './components/abvconverter.js'; // eslint-disable-line import/extensions
+import volumeFunc from './components/volume.js'; // eslint-disable-line import/extensions
+
+// COMMENT EVERYTHING IN THE PROJECT AND THEN MERGE MAIN BRANCH WITH COMMENTING
+
+/*
+All contents of the website are dynamically generated into the 'content' div in the
+index.html file, located in the 'dist' folder.
+
+The children and grandchildren of the content div are shown below:
+
+content
+   -heading
+   -buttonBox (a row of buttons to select which Beer Tool to use)
+      -julianButton
+      -abvButton
+      -volumeButton
+   -toolBox (a box where each Beer Tool will appear)
+
+This file dynamically generates this content, then adds event listeners to each button,
+which run the components imported above.  Each component generates its own Beer Tool in
+the toolBox.
+*/
 
 const content = document.getElementById('content');
 
