@@ -1,5 +1,6 @@
 /*
-This ES6 module dynamically generates the Julian Date Converter onto the DOM.
+This module dynamically generates the Julian Date Converter onto the DOM.
+The user enters four digits found on some beer packages as an expiration date.
 */
 
 // TODO: redesign error messages as modal elements to avoid using alerts.
@@ -8,6 +9,7 @@ export default function julianFunc() {
   let julian; let year; let month; let
     day;
   const toolBox = document.getElementById('toolBox');
+  // First the module clears the toolbox of any contents.
   toolBox.innerHTML = [];
 
   const prompt = document.createElement('div');
@@ -29,12 +31,26 @@ export default function julianFunc() {
 
   const julianObj = {
     operate() {
+      /*
+      The year is found by isolating the last digit of the number using modulus.
+      This digit represents the last digit of the year (a 1 would be 2021).
+      */
       year = julianField.value % 10;
+      /*
+      The date is found by isolating the first three digits of the number
+      by simply diving by ten and discarding the remainder.  This is the Julian calendar
+      date (123 would be the 123rd day of the year).
+      */
       julian = Math.floor(julianField.value / 10);
       if (julian < 1 || julian > 365) {
         alert('Please enter a valid Julian date.'); // eslint-disable-line no-alert
         return;
       }
+      /*
+      The month is found based on a series of if statements for each month.
+      The month is assigned if the Julian date falls after the first of that month.
+      The day is found by subtracting the difference.
+      */
       if (julian <= 365 && julian > 334) {
         month = 'December';
         day = julian - 334;

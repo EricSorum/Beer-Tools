@@ -1,3 +1,11 @@
+/*
+This module renders the ABV converter tool in the tool box.
+The user inputs two numbers: a beer's volume and the alcohol by volume (ABV)
+percentage.
+One "standard" alcoholic drink is one 12oz. serving of 5% beer.
+The app returns an answer based on this formula: abv*vol/60.
+*/
+
 export default function abvConverterFunc() {
   const topBox = document.createElement('div');
   const toolBox = document.getElementById('toolBox');
